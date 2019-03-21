@@ -11,10 +11,10 @@ npm i devasys-i2c --save
 ```
 import devasys = require("devasys-i2c");
 
-var devasysI2c = new devasys.DevasysI2C();
+var device = new devasys.DevasysI2C();
 
 // Get Dll Version
-var dllVersion = devasysI2c.GetDllVersion();
+var dllVersion = device.GetDllVersion();
 console.log('dllVersion :' + dllVersion);
 
 // Open device
