@@ -2,3 +2,5 @@
 src
 tsconfig.json
 jestconfig.json
+/lib/test/
+
