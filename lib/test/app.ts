@@ -1,6 +1,6 @@
 import devasys = require("../../src/DevasysI2C");
 
-var device = new devasys.DevasysI2C();
+var device = new devasys.DevasysI2C(false);
 
 // Get Dll Version
 var dllVersion = device.GetDllVersion();

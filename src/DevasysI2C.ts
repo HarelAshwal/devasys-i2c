@@ -6,14 +6,16 @@ import * as ArrayType from 'ref-array';
 
 export class DevasysI2C {
 
-    constructor() {
+    constructor(showDebugInfo: boolean = true) {
         this.InitFFI();
         this.Open();
         this.handle = 0;
+        this.showDebugInfo = showDebugInfo;
     }
 
     libi2c: any;
     handle: number;
+    showDebugInfo: boolean;
 
     DAPI_I2C_TRANS_DAMP = Struct({
         'byType': 'byte',
@@ -64,7 +66,7 @@ export class DevasysI2C {
         var arr = [...I2CTransRef];
         var arr_sliced = arr.slice(6, 6 + numOfBytes);
 
-        console.log("READ [0x" + devAddr.toString(16) + "]: " + this.ToHexString(arr_sliced));
+        if (this.showDebugInfo) console.log("READ [0x" + devAddr.toString(16) + "]: " + this.ToHexString(arr_sliced));
         return arr_sliced;
     }
 
@@ -79,7 +81,7 @@ export class DevasysI2C {
         }
 
         var result = this.libi2c.DAPI_WriteI2c(this.handle, I2CTransRef);
-        console.log("WRITE [0x" + devAddr.toString(16) + "]: " + this.ToHexString(data));
+        if (this.showDebugInfo) console.log("WRITE [0x" + devAddr.toString(16) + "]: " + this.ToHexString(data));
 
     }
 

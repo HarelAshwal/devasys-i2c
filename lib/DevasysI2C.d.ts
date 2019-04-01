@@ -1,7 +1,8 @@
 export declare class DevasysI2C {
-    constructor();
+    constructor(showDebugInfo?: boolean);
     libi2c: any;
     handle: number;
+    showDebugInfo: boolean;
     DAPI_I2C_TRANS_DAMP: any;
     InitFFI(): void;
     private ToHexString;

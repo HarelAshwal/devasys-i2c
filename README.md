@@ -9,7 +9,7 @@ npm i devasys-i2c --save
 ## Usage
 
 ```
-import devasys = require("devasys-i2c");
+import devasys = require("devasys-i2c_debug");
 
 var device = new devasys.DevasysI2C();
 
