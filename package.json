@@ -1,7 +1,7 @@
 {
   "author": "harel.ashwal",
   "name": "devasys-i2c_debug",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Devasys USB I2C adapter driver for nodejs (using FFI)",
   "main": "lib/DevasysI2C.js",
   "types": "lib/DevasysI2C.d.ts",

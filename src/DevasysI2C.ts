@@ -82,6 +82,7 @@ export class DevasysI2C {
 
         var result = this.libi2c.DAPI_WriteI2c(this.handle, I2CTransRef);
         if (this.showDebugInfo) console.log("WRITE [0x" + devAddr.toString(16) + "]: " + this.ToHexString(data));
+        return result;
 
     }
 

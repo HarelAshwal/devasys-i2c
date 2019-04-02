@@ -7,7 +7,7 @@ export declare class DevasysI2C {
     InitFFI(): void;
     private ToHexString;
     ReadI2C(devAddr: number, numOfBytes: number): number[];
-    WriteI2C(devAddr: number, data: number[]): void;
+    WriteI2C(devAddr: number, data: number[]): any;
     Open(): void;
     GetDllVersion(): any;
     GetFWVersion(): any;
