@@ -44,7 +44,7 @@ export class DevasysI2C {
             'DAPI_ReadI2c': ['bool', ['int', DAPI_I2C_TRANS_DAMPPtr]],
 
             // public static extern int DAPI_WriteI2c(IntPtr hDevInstance, ref DAPI_I2C_TRANS TransI2c);
-            'DAPI_WriteI2c': ['bool', ['int', DAPI_I2C_TRANS_DAMPPtr]],
+            'DAPI_WriteI2c': ['int', ['int', DAPI_I2C_TRANS_DAMPPtr]],
         });
     }
 
@@ -70,7 +70,7 @@ export class DevasysI2C {
         return arr_sliced;
     }
 
-    WriteI2C(devAddr: number, data: number[]) {
+    WriteI2C(devAddr: number, data: number[]): number {
         var I2CTransRef = ref.alloc(this.DAPI_I2C_TRANS_DAMP);
         I2CTransRef[0] = 0;    // type
         I2CTransRef[1] = devAddr; // dev addr

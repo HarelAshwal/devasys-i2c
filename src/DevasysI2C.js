@@ -30,7 +30,7 @@ class DevasysI2C {
             // public static extern int DAPI_ReadI2c(IntPtr hDevInstance, ref DAPI_I2C_TRANS_Long TransI2c);
             'DAPI_ReadI2c': ['bool', ['int', DAPI_I2C_TRANS_DAMPPtr]],
             // public static extern int DAPI_WriteI2c(IntPtr hDevInstance, ref DAPI_I2C_TRANS TransI2c);
-            'DAPI_WriteI2c': ['bool', ['int', DAPI_I2C_TRANS_DAMPPtr]],
+            'DAPI_WriteI2c': ['int', ['int', DAPI_I2C_TRANS_DAMPPtr]],
         });
     }
     ToHexString(byteArray) {
@@ -61,6 +61,7 @@ class DevasysI2C {
         var result = this.libi2c.DAPI_WriteI2c(this.handle, I2CTransRef);
         if (this.showDebugInfo)
             console.log("WRITE [0x" + devAddr.toString(16) + "]: " + this.ToHexString(data));
+        return result;
     }
     Open() {
         this.handle = this.libi2c.DAPI_OpenDeviceInstance("UsbI2cIo", 0);

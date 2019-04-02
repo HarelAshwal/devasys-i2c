@@ -12,8 +12,8 @@ device.Open();
 // WriteI2C
 // first parameter - i2c address,
 // second parameter - array of bytes to write
-device.WriteI2C(0xF0, [0x10, 0xE0]);
-device.WriteI2C(0xF0, [0x21]);
+var count = device.WriteI2C(0xF0, [0x10, 0xE0]);
+var count = device.WriteI2C(0xF0, [0x21]);
 
 // ReadI2C
 // first parameter - i2c address
