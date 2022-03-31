@@ -1,7 +1,7 @@
-import * as ffi from 'ffi';
-import * as ref from 'ref';
-import * as Struct from 'ref-struct';
-import * as ArrayType from 'ref-array';
+import * as ffi from 'ffi-napi';
+import * as ref from 'ref-napi';
+import * as Struct from 'ref-struct-napi';
+import * as ArrayType from 'ref-array-napi';
 
 
 export class DevasysI2C {
