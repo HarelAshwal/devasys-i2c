@@ -1,9 +1,10 @@
+import * as Struct from 'ref-struct-napi';
 export declare class DevasysI2C {
     constructor(showDebugInfo?: boolean);
     libi2c: any;
     handle: number;
     showDebugInfo: boolean;
-    DAPI_I2C_TRANS_DAMP: any;
+    DAPI_I2C_TRANS_DAMP: Struct;
     InitFFI(): void;
     private ToHexString;
     ReadI2C(devAddr: number, numOfBytes: number): number[];

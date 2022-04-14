@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "devasys-i2c": "^0.4.9"
+    "devasys-i2c_debug": "^0.5.6"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.24"
   }
 }
